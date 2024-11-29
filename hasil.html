@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <h2><span id="namaSpan"></span>, Khodam yang ada dalam diri kamu adalah :</h2>
+      <h1 class="hasil"><span id="khodam"></span></h1>
+      <h3><span id="deskripsi"></span></h3>
+      <button class="btn"><a href="/index.html"></a>Kembali</button>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    const nama = localStorage.getItem('nama');
+    document.getElementById('namaSpan').textContent = nama;
+
+    function getRandomItem(array) {
+      return array[Math.floor(Math.random() * array.length)];
+    }
+
+    const randomKhodam = getRandomItem(data);
+    document.getElementById('khodam').textContent = randomKhodam.khodam;
+    document.getElementById('deskripsi').textContent = randomKhodam.deskripsi;
+  </script>
+</body>
+
+</html>
